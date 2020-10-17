@@ -1,0 +1,87 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtDlgs;
+
+type
+  TForm1 = class(TForm)
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Label4: TLabel;
+    Edit4: TEdit;
+    Memo1: TMemo;
+    Label5: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    SaveDialog1: TSaveDialog;
+    OpenDialog1: TOpenDialog;
+    Label6: TLabel;
+    Edit5: TEdit;
+    Label7: TLabel;
+    Edit6: TEdit;
+    Label8: TLabel;
+    Edit7: TEdit;
+    Label9: TLabel;
+    Button4: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  sav:TStringList;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+CreateDir('db/'+edit2.text);
+ sav := TStringList.Create;
+  sav.Add(edit1.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'имя'+'.txt');
+  sav.Free;
+   sav := TStringList.Create;
+  sav.Add(edit2.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'Фамилия'+'.txt');
+  sav.Free;
+   sav := TStringList.Create;
+  sav.Add(edit3.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'Отчество'+'.txt');
+  sav.Free;
+   sav := TStringList.Create;
+  sav.Add(edit4.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'Номер телефона'+'.txt');
+  sav.Free;
+   sav := TStringList.Create;
+  sav.Add(edit5.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'почта'+'.txt');
+  sav.Free;
+   sav := TStringList.Create;
+  sav.Add(edit6.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'Ближайшие люди'+'.txt');
+  sav.Free;
+   sav := TStringList.Create;
+  sav.Add(edit7.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'Адрес'+'.txt');
+  sav.Free;
+   sav := TStringList.Create;
+  sav.Add(memo1.Text);
+  sav.SaveToFile('db/'+edit2.Text+'/'+'Остальное'+'.txt');
+  sav.Free;
+
+end;
+
+end.
